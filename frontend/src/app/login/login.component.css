@@ -1,0 +1,7 @@
+.centerLoginPanel {
+    width: 100%;
+    height: 85vh;
+    margin-top: 10px;
+    display: grid;
+    align-items: center;
+}

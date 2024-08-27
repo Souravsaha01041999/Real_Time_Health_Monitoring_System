@@ -1,0 +1,30 @@
+<p-toast></p-toast>
+<div class="centerLoginPanel">
+    <div class="p-grid">
+        <div class="p-col-4"></div>
+        <div class="p-col-4">
+            <p-panel header="Login">
+                <div class="p-grid">
+                    <div class="p-col-3">
+                        <label style="font-size: 20px;">User ID</label>
+                    </div>
+                    <div class="p-col-9">
+                        <input type="text" [(ngModel)]="loginId" pInputText [style]="{'width':'100%'}" placeholder="User ID" />
+                    </div>
+                </div>
+                <div class="p-grid">
+                    <div class="p-col-3">
+                        <label style="font-size: 20px;">Password</label>
+                    </div>
+                    <div class="p-col-9">
+                        <input type="password" [(ngModel)]="password" pInputText [style]="{'width':'100%'}" placeholder="Password" />
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <p-button (click)="onClickLogin()" [style]="{'width':'60%'}" label="Login"></p-button>
+                </div>
+            </p-panel>
+        </div>
+        <div class="p-col-4"></div>
+    </div>
+</div>

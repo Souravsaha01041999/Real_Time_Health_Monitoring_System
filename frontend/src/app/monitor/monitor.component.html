@@ -1,0 +1,16 @@
+<div class="p-grid">
+    <div class="p-col-3">
+        <div *ngFor="let eachRoom of listOfRooms">
+            <div class="roomClass" (click)="selectedRoom = eachRoom">
+                {{eachRoom}}
+            </div>
+        </div>
+    </div>
+    <div class="p-col-9">
+        <div class="graphSection">
+            <div *ngIf="selectedRoom != ''" class="selectedRoomStyle">{{selectedRoom}}</div>
+            <div id="hurtRate"></div>
+            <div id="oxLvl"></div>
+        </div>
+    </div>
+</div>

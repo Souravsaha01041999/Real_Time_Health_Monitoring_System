@@ -1,0 +1,146 @@
+<p-toast></p-toast>
+<!-- Pesent popup -->
+<p-dialog header="Add Patient" [modal]="true" [(visible)]="pseVisible" [style]="{width: '50vw'}">
+    <div>
+        <div class="p-grid">
+            <div class="p-col-3">
+                Patient Name
+            </div>
+            <div class="p-col-9">
+                <input type="text" [(ngModel)]="pseName" pInputText [style]="{'width':'100%'}" placeholder="Name" />
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-col-3">
+                Patient Mobile
+            </div>
+            <div class="p-col-9">
+                <input type="text" [(ngModel)]="pseMobile" pInputText [style]="{'width':'100%'}" placeholder="Mobile" />
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-col-3">
+                Assign to doctor
+            </div>
+            <div class="p-col-9">
+                <input type="text" [(ngModel)]="assignDoctor" pInputText [style]="{'width':'100%'}" placeholder="Id" />
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-col-3">
+                Assign to room
+            </div>
+            <div class="p-col-9">
+                <input type="text" [(ngModel)]="room" pInputText [style]="{'width':'100%'}" placeholder="Room" />
+            </div>
+        </div>
+        <p-button (click)="onSavePse()" [style]="{'width':'100%'}" label="Save"></p-button>
+    </div>
+</p-dialog>
+
+<!-- Doctor popup -->
+<p-dialog header="Add Doctor" [modal]="true" [(visible)]="doctorVisible" [style]="{width: '50vw'}">
+    <div>
+        <div class="p-grid">
+            <div class="p-col-3">
+                Doctor Name
+            </div>
+            <div class="p-col-9">
+                <input type="text" [(ngModel)]="doctorName" pInputText [style]="{'width':'100%'}" placeholder="Name" />
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-col-3">
+                Doctor Email
+            </div>
+            <div class="p-col-9">
+                <input type="text" [(ngModel)]="doctorEmail" pInputText [style]="{'width':'100%'}"
+                    placeholder="Email" />
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="p-col-3">
+                Doctor Password
+            </div>
+            <div class="p-col-9">
+                <input type="password" [(ngModel)]="doctorPassword" pInputText [style]="{'width':'100%'}"
+                    placeholder="Password" />
+            </div>
+        </div>
+        <p-button (click)="onSaveDoctor()" [style]="{'width':'100%'}" label="Save"></p-button>
+    </div>
+</p-dialog>
+
+<div *ngIf="isShowScreen" class="roomHolder">
+    <label style="font-size: 30px;">Rooms</label>
+    <br>
+
+    <span *ngFor="let eachRoom of dashboardDetails.room">
+        <div style="display:inline-block; margin: 10px;">
+            <p-card [style]="{'width':'150px'}">
+                <label style="font-size: 20px; font-weight: bold;">
+                    {{ eachRoom }}
+                </label>
+            </p-card>
+        </div>
+    </span>
+</div>
+
+<div *ngIf="isShowScreen" class="p-grid">
+    <div class="p-col-6">
+        <p-card [style]="{'height':'60vh'}">
+            <div class="card-section">
+                <p-button (click)="pseVisible = true" [style]="{'width':'60%'}" label="Add Present"></p-button>
+                <br><br>
+                <div *ngFor="let eachPse of dashboardDetails.pse">
+                    <div class="pseHolder">
+                        <div class="p-grid">
+                            <div class="p-col-3">
+                                Name
+                            </div>
+                            <div class="p-col-9">
+                                <label class="pseFont">{{ eachPse.name }}</label>
+                            </div>
+                        </div>
+                        <div class="p-grid">
+                            <div class="p-col-3">
+                                Mobile
+                            </div>
+                            <div class="p-col-9">
+                                <label class="pseFont">{{ eachPse.mobile }}</label>
+                            </div>
+                        </div>
+                        <div class="p-grid">
+                            <div class="p-col-3">
+                                Room Id
+                            </div>
+                            <div class="p-col-9">
+                                <label class="pseFont">{{ eachPse.room }}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card [style]="{'height':'60vh'}">
+            <div class="card-section">
+                <p-button (click)="doctorVisible = true" [style]="{'width':'60%'}" label="Add Doctor"></p-button>
+                <br><br>
+                <div *ngFor="let eachDoctor of dashboardDetails.doctors">
+                    <div class="pseHolder">
+                        <div class="p-grid">
+                            <div class="p-col-3">
+                                Name
+                            </div>
+                            <div class="p-col-9">
+                                <label class="pseFont">{{ eachDoctor.name }}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </p-card>
+    </div>
+</div>

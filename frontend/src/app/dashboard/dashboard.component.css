@@ -1,0 +1,29 @@
+.roomHolder {
+    width: 100%;
+    padding: 20px;
+}
+
+.card-section {
+    height: 50vh;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.pseHolder {
+    min-width: 400px;
+    text-align: left;
+    padding: 20px;
+    margin: 20px;
+    background-color: #ffbebe;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 5px #8a8a8a;
+}
+
+.pseFont {
+    font-size: 25px;
+    color: #4d0000;
+    font-weight: bold;
+}
